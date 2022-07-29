@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Red Wagon Backend
+  version: '1.0'
+paths:
+  /hello:
+    get:
+      summary: 'A nice hello message for you!'
+      parameters:
+        - name: name
+          in: query
+          description: Your name to greet with
+          required: false
+          schema:
+            type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: 'Some error has occured'
