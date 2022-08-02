@@ -1,11 +1,11 @@
 import Debug from 'debug'
-import service from '../service/index.js'
+import { HelloWorldService } from './hello.service.js'
 
 const debug = Debug('helloWorld')
 
 function helloWorld (req, res) {
   const { name } = req.query
-  const message = service.generateHelloWorld(name)
+  const message = HelloWorldService.generateMessage(name)
 
   debug(message)
   res.json({ message })

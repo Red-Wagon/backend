@@ -1,8 +1,8 @@
 import express from 'express'
-import controller from '../controller/index.js'
+import HelloRouter from '../hello/routes/index.js'
 
 const router = express.Router()
 
-router.get('/hello', controller.helloWorld)
+router.use('/', HelloRouter)
 
 export default router
