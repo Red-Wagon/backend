@@ -5,8 +5,11 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import * as OpenApiValidator from 'express-openapi-validator'
 import swaggerUi from 'swagger-ui-express'
+import mongoose from 'mongoose'
 import YAML from 'yamljs'
 import router from './routes/index.js'
+
+mongoose.connect(process.env.MONGODB_URI)
 
 const app = express()
 const port = process.env.PORT || 3001

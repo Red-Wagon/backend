@@ -1,5 +1,5 @@
 import Debug from 'debug'
-import * as service from '../service/index.js'
+import service from '../service/index.js'
 
 const debug = Debug('helloWorld')
 
@@ -11,6 +11,6 @@ function helloWorld (req, res) {
   res.json({ message })
 }
 
-export {
+export default {
   helloWorld
 }
